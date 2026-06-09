@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オカダ電気</title>
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='okada_log_in.css') }}">
+
+    </head>
+<body>
+    <div id="log_in">
+        <h3>オカダ電気ログイン</h3>
+    <section id="log_in_inline">
+<form action="/login" method="post">
+    <label for="syain_id">【社員番号】</label>
+    <p><input type="text" id="syain_id" name="syain_id"></p>
+    <label for="name">【名前】</label>
+    <p><input type="text" id="name" name="name"> </p>
+    <button type="submit">ログイン</button>
+</form>
+    </section>
+    </div>
+</body>

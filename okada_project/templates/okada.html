@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>オカダ電気</title>
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='okada.css') }}">
+    <!-- <link rel="stylesheet" href="okada.css">-->
+</head>
+<body>
+    <div id="X">
+        <button class="select-button">X</button>
+    </div>
+<!-- 機種の選択 -->
+<section id="機器選択">
+    <button><a href="/next">配線用遮断器</a></button>
+    <button><a href="/next">漏電用遮断器</a></button>
+    <button><a href="/next">リレー</a></button>
+    <button><a href="/next">その他(追加予定)</a></button>
+    <button id="settei"><a href="/next">設定</a></button>
+</section>
+<!-- 特徴の検索(メーカー、極数、フレーム、トリップ、接続方法、補助接点) -->
+<!-- start 1 --><div id="main">
+<!-- start 2 --><section id="特徴検索">
+    <form action="/search" method="post">
+        <p><label for="maker">【メーカーを選択】</label></p>
+        <p><select name="maker" id="maker" onchange="this.form.submit()"></p>
+            <option value="">選択してください</option>
+            <option value="kawamura">河村電機</option>
+            <option value="panasonic">パナソニック</option>
+            <option value="mitsubishi">三菱電機</option>
+        </select>
+        <p><label for="pole">【極数】</label></p>
+        <p><select name="pole" id="pole" onchange="this.form.submit()"></p>
+            <option value="">選択してください</option>
+            <option value="1">1極</option>
+            <option value="2">2極</option>
+            <option value="3">3極</option>
+            <option value="4">4極</option>        
+        </select>
+        <p><label for="frame">【フレーム[AF]】</label></p>
+        <p><select name="frame" id="frame" onchange="this.form.submit()"></p>
+            <option value="">選択してください</option>
+            <option value="30">30AF</option>
+            <option value="50">50AF</option>
+            <option value="100">100AF</option>
+        </select>
+        <p><label for="trip">【トリップ[AT]】</label></p>
+        <p><select name="trip" id="trip" onchange="this.form.submit()">
+            <option value="">選択してください</option>
+            <option value="1">1AT</option>
+            <option value="2">2AT</option>
+            <option value="3">3AT</option>
+        </select>
+        <p><label for="connect">【接続方法】</label></p>
+        <p><select name="connect" id="connect" onchange="this.form.submit()">
+            <option value="">選択してください</option>
+            <option value="neji">ねじ締め</option>
+            <option value="attyaku">圧着端子</option>
+            <option value="sashikomi">差し込み式</option>
+            <option value="ba-">バー接続</option>
+         </select>
+        <p><label for="setten" >【補助接点】</label></p>
+        <p><select name="setten" id="setten" onchange="this.form.submit()">
+            <option value="">選択してください</option>
+            <option value="a">a接点</option>
+            <option value="b">b接点</option>
+            <option value="c">c接点</option>
+
+        </select>
+    </form>
+    <div id="syain-info">
+        <p>【社員番号】{{syain_id}} 【名前】{{name}}</p>
+    </div>
+<!-- end 2--></section>
+<!--start 3--><section id="result">
+<!-- start 4--><section id="gurafu">
+    <h3 id="syou">【詳細情報】</h3>
+    {% if detail %}
+    <p>【定格遮断容量KA】</p>
+    <p id="atai">{{detail["定格遮断容量KA"]}}</p>
+    <p>【感度電流A】</p>
+    <p id="atai">{{detail["感度電流A"]}}</p>
+    <p>【相線式】</p>
+    <p id="atai">{{detail["相線式"]}}</p>
+    <p>【補助スイッチ】</p>
+    <p id="atai">{{detail["補助スイッチ"]}}</p>
+    <p>【カバー】</p>
+    <p id="atai">{{detail["カバー"]}}</p>
+    <p>【外形寸法mm】</p>
+    <p id="atai">{{detail["外形寸法"]}}</p>
+    <p>【重量Kg】</p>
+    <p id="atai">{{detail["重量"]}}</p>
+    <p>【逆接続】</p>
+    <p id="atai">{{detail["逆接続"]}}</p>
+    <p>【1次、2次側ネジサイズ】</p>
+    <p id="atai">{{detail["1次、2次側ネジサイズ"]}}</p>
+    <p>【適応電線サイズ】</p>
+    <p id="atai">{{detail["適応電線サイズ"]}}</p>
+    <p>【ロックカバー】</p>
+    <p id="atai">{{detail["ロックカバー"]}}</p>
+    <p>【取っ手ロック装置】</p>
+    <p id="atai">{{detail["取っ手ロック装置"]}}</p>
+    {% endif %}
+<!-- end 4--></section>
+<!--start 5--><section id="other">
+    {% if detail %}
+    <button><a href="{{detail["カタログURL"]}}">カタログ表示</a></button>
+    <p><button><a href="{{detail["DXFURL"]}}">DXFダウンロード</a></button></p>
+    {% endif %}
+<!-- end 5--></section>
+<!-- end 3--></section>
+<!-- end 1--></div>
+</body>

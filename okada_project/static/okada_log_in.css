@@ -1,0 +1,21 @@
+#log_in{
+    display:flex;
+    border:1px solid #ccc;
+    padding:20px 5px;
+    flex-direction:column;
+    align-items:center;
+
+}
+#log_in_inline{
+    display:flex;
+    border:1px solid #ccc;
+    flex-direction:column;
+    padding:20px;
+    position:relative;
+
+}
+#log_in_inline button{
+    position:relative;
+    left:50px;
+
+}

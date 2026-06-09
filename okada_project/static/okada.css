@@ -1,0 +1,55 @@
+#X{
+    text-align:right;
+}
+#settei{
+    text-align:right;
+}
+#main{
+    position:relative;
+    display:flex;
+    align-items:flex-start;
+    border:1px solid #ccc;
+    padding:40px;
+}
+#特徴検索{
+    text-align:center;
+    padding:20px;
+}
+#result{
+    flex:1;
+    border:1px solid #ccc;
+    display:flex;
+    align-items:flex-start;
+    padding:30px;
+    top: 100px;         
+    right: 20px;         
+    width: 300px;       
+    height: 400px;      
+    overflow-y:auto;
+    overflow-x:auto;
+    background: #fff;    
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+#gurafu{
+    flex:3;
+    border:1px solid #ccc;
+}
+#other{
+    flex:1;
+    align-self:flex-end;
+    text-align: center;
+    font-size:2rem;
+}
+#atai {
+    border: 1px solid #ccc;
+}
+#syou{
+    border:1px solid #ccc;
+}
+#syain-info{
+    position:absolute;
+    bottom:0;
+    right:60px;
+    font-size:14px;
+}
