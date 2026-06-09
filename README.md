@@ -1,6 +1,8 @@
 # haidennbann_search_system
 Python・Flask・SQLite・HTML・CSSを用いた配電盤検索システム
-#配電盤検索システム
+
+# 配電盤検索システム
+
 ## 概要
 配電盤製品の型番や製品情報を検索するためのWebアプリケーションです。
 
