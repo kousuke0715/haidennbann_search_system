@@ -27,7 +27,7 @@ Python・Flask・SQLite・HTML・CSSを用いた配電盤検索システム
 企業から提供された課題に対し、配電盤製品を効率よく検索できるシステムの構築を目指しています。
 
 ## UI画像
-# ログインページ
+## ログインページ
 <img width="826" height="561" alt="image" src="https://github.com/user-attachments/assets/3d350cef-6548-4595-acf5-96afa1f53120" />
 
 ## 検索画面(上部)
